@@ -1,0 +1,15 @@
+# Active task
+- Status: DONE (agent core, mock model); PARTIAL overall (real model blocked, identity provider pending)
+- Task ID: T-20261123-006 — AI agent behind an LlmGateway (mock only) with deterministic policy (T-001..T-005 DONE)
+- Prompt IDs: P-20261123-006
+- Agent/model: Claude Code, Sonnet 5.5
+- Updated: 2026-11-23
+- Branch / HEAD / dirty files: main, clean after first commit; origin configured, not pushed
+- Goal and acceptance criteria: implement P0 only; schema (spec sec. 11) + `scheduling` engine; TC-020 (100 concurrent same-slot) green before any WhatsApp/LLM work.
+- Verified progress: schema, domain, service, tests all green (see below).
+- Files edited: package.json, tsconfig.json, vitest.config.ts, docker-compose.yml, packages/domain/**, packages/db/** (migrations, src, test), README.md, docs/adr/0001-scheduling-concurrency.md
+- Tests: PASS - `npm test` 198 passed, 1 skipped (stress), 3 consecutive runs; typecheck PASS; web build OK. Live e2e VERIFIED with real processes (API+worker+signed simulator): greeting -> offers -> choice -> hold -> yes -> CONFIRMED appointment visible in agenda; urgency -> fixed text + HUMAN_PENDING with 0 model calls. NOT_RUN: any real model, the 200-conversation evaluation (RNF-019), red-team against a real model, webhook/agent load tests, stress test after these changes.
+- Blockers / risks: none blocking. Not covered yet: auth/MFA/RBAC (RF-003..005), phone normalization (RF-011), reminders (RF-036 is P1), DB-level RLS.
+- Handoff package ready: AGENTS.md + docs/CODEX_GUIDE.md. Recommended first steps: WP0 (git init after user OK, CI, lint) then WP1 (identity) - see guide section 5.
+- Exact next safe action: pick one: (A) real identity (invitations, MFA, replace interim HS256 token), rate limiting, OpenAPI, CRUD for clinics/professionals/services/schedules + block/holiday UI; (B) agent configuration UI (RF-025 P1) / approved-policy source (hours, address, coverage) with versions; (C) Playwright e2e + CI + retention job for inbox_events payloads. Real LLM client ONLY after D-05, D-13, legal review and explicit user authorization (needs API key, costs, DPA). Open decisions that block agent scope: D-04 consent, D-06 identity for cancel/reschedule, D-12 out-of-hours promises.
+- Session record: sessions/ (none written; this file + handoff are the record)

@@ -1,0 +1,8 @@
+{
+  "name": "@turnoflow/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "dependencies": { "@turnoflow/db": "*", "@turnoflow/domain": "*", "fastify": "^5.2.0", "pg": "^8.13.1", "zod": "^3.24.1" }
+}

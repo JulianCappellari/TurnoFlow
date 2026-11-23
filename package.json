@@ -1,0 +1,34 @@
+{
+  "name": "turnoflow",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "db:up": "docker compose up -d --wait postgres",
+    "db:down": "docker compose down -v",
+    "db:migrate": "tsx packages/db/src/cli-migrate.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p apps/web/tsconfig.json",
+    "test": "vitest run",
+    "test:stress": "cross-env STRESS=1 vitest run packages/db/test/scheduling.stress.test.ts",
+    "dev:db": "docker compose up -d --wait postgres",
+    "dev:seed": "tsx apps/api/src/dev/seed.ts",
+    "dev:api": "tsx apps/api/src/server.ts",
+    "dev:web": "npm run dev -w @turnoflow/web",
+    "dev:worker": "tsx apps/worker/src/main.ts",
+    "dev:wa": "tsx apps/api/src/dev/simulate-whatsapp.ts",
+    "dev:createdb": "tsx packages/db/src/cli-createdb.ts"
+  },
+  "devDependencies": {
+    "@types/luxon": "^3.4.2",
+    "@types/node": "^22.10.0",
+    "@types/pg": "^8.11.10",
+    "cross-env": "^7.0.3",
+    "tsx": "^4.23.15",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
