@@ -2,7 +2,7 @@
 - Memory schema: 2.0
 - Updated: 2026-11-23
 - Last agent: Claude Code (Sonnet 5.5)
-- Branch/HEAD: git repo on branch main; remote origin = https://github.com/JulianCappellari/TurnoFlow.git (first commit made locally, push pending user confirmation)
+- Branch/HEAD: git repo on branch main; remote origin = https://github.com/JulianCappellari/TurnoFlow.git (first commit d35aad8 pushed on 2026-11-23)
 - Evidence freshness: VERIFIED by test run on 2026-11-23 (see ACTIVE_TASK / handoff)
 
 ## Purpose and scope

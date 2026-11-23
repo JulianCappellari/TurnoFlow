@@ -2,7 +2,7 @@
 - From agent: Claude Code (Sonnet 5.5)
 - To agent: any
 - Timestamp: 2026-11-23
-- Branch / HEAD / dirty files: main, first commit 'Base verificada de TurnoFlow (P0)...'; remote origin configured; NOT pushed yet; WP0 git init is done
+- Branch / HEAD / dirty files: main, first commit 'Base verificada de TurnoFlow (P0)...'; remote origin configured; pushed to origin/main on 2026-11-23; WP0 git init is done
 - Active task ID: T-20261123-006 (agent done)
 - Prompt IDs: P-20261123-001..006
 - Status: engine, API, panel, inbox, webhook+workers and AI agent (mock model) complete; identity, real model, real provider not started

@@ -4,7 +4,7 @@
 - Prompt IDs: P-20261123-006
 - Agent/model: Claude Code, Sonnet 5.5
 - Updated: 2026-11-23
-- Branch / HEAD / dirty files: main, clean after first commit; origin configured, not pushed
+- Branch / HEAD / dirty files: main, clean after first commit; pushed to origin/main
 - Goal and acceptance criteria: implement P0 only; schema (spec sec. 11) + `scheduling` engine; TC-020 (100 concurrent same-slot) green before any WhatsApp/LLM work.
 - Verified progress: schema, domain, service, tests all green (see below).
 - Files edited: package.json, tsconfig.json, vitest.config.ts, docker-compose.yml, packages/domain/**, packages/db/** (migrations, src, test), README.md, docs/adr/0001-scheduling-concurrency.md
